@@ -108,27 +108,27 @@
                     new ol.layer.Group({
                         title: 'Seguridad Ciudadana',
                         fold: 'close',
-                        layers: []
+                        layers: cargaSeguCiu()
                     }),
                     new ol.layer.Group({
                         title: 'Obras Públicas',
                         fold: 'close',
-                        layers: []
+                        layers: cargaObraPub()
                     }),
                     new ol.layer.Group({
                         title: 'Participación Ciudadana',
                         fold: 'close',
-                        layers: []
+                        layers: cargaPartCiu()
                     }),
                     new ol.layer.Group({
                         title: 'Desarrollo Urbano',
                         fold: 'close',
-                        layers: []
+                        layers: cargaDesaUrb()
                     }),
                     new ol.layer.Group({
                         title: 'Desarrollo Social',
                         fold: 'close',
-                        layers: []
+                        layers: cargaDesaSoc()
                     }),
                     new ol.layer.Group({
                         title: 'IMMX',
@@ -138,22 +138,22 @@
                     new ol.layer.Group({
                         title: 'Desarrollo Económico',
                         fold: 'close',
-                        layers: []
+                        layers: cargaDesaEco()
                     }),
                     new ol.layer.Group({
                         title: 'Cartografía',
                         fold: 'close',
-                        layers: []
+                        layers: cargaCartografia()
                     }),
                     new ol.layer.Group({
                         title: 'CMAS',
                         fold: 'close',
-                        layers: []
+                        layers: cargaCmas()
                     }),
                     new ol.layer.Group({
                         title: 'Medio Ambiente y Sustentabilidad',
                         fold: 'close',
-                        layers: []
+                        layers: cargaMays()
                     })
                 ]
             })
@@ -178,8 +178,35 @@
     map.addControl(sidebar);
 })();
 
-function cargaMays() {}
+// Carga de capas de Medio Ambiente y Sustentabilidad
+function cargaMays() {
+    var data = [];
 
+    return data;
+}
+
+// Carga de capas de CMAS
+function cargaCmas() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de Cartografia
+function cargaCartografia() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de Desarrollo Economico
+function cargaDesaEco() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de IMMX
 function cargaImmx() {
     var data = [
         new ol.layer.Image({
@@ -188,20 +215,56 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'show:0' },
-                url: '',
+                url: 'http://localhost:8080/geoserver/cgc_puntos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cgc_puntos%3Acgc_puntos&bbox=714989.0794947173%2C2158725.2883159253%2C726772.5071550107%2C2166679.2346946606&width=768&height=518&srs=EPSG%3A32614&styles=&format=image%2Fpng',
                 serverType: 'geoserver'
             })
         }),
         new ol.layer.Image({
-            title: 'Luminarias',
+            title: 'Colonias',
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'show:0' },
-                url: '',
+                url: 'http://localhost:8080/geoserver/colonias_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=colonias_poligonos%3Acolonias_poligonos&bbox=713070.5210811349%2C2155983.6202275706%2C727856.8402272151%2C2167101.511132997&width=768&height=577&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
                 serverType: 'geoserver'
             })
         })
-    ]
-    return data
+    ];
+
+    return data;
+}
+
+// Carga de capas de Desarrollo Social
+function cargaDesaSoc() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de Desarrollo Urbano
+function cargaDesaUrb() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de Participacion Ciudadana
+function cargaPartCiu() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de Obras Publicas
+function cargaObraPub() {
+    var data = [];
+
+    return data;
+}
+
+// Carga de capas de Seguridad Ciudadana
+function cargaSeguCiu() {
+    var data = [];
+
+    return data;
 }
