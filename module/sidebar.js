@@ -210,16 +210,6 @@ function cargaDesaEco() {
 function cargaImmx() {
     var data = [
         new ol.layer.Image({
-            title: 'CGC',
-            visible: false,
-            source: new ol.source.ImageWMS({
-                ratio: 1,
-                params: { LAYERS: 'cgc_puntos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/cgc_puntos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cgc_puntos%3Acgc_puntos&bbox=714989.0794947173%2C2158725.2883159253%2C726772.5071550107%2C2166679.2346946606&width=768&height=518&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
-                serverType: 'geoserver'
-            })
-        }),
-        new ol.layer.Image({
             title: 'Colonias',
             visible: false,
             source: new ol.source.ImageWMS({
@@ -229,16 +219,16 @@ function cargaImmx() {
                 serverType: 'geoserver'
             })
         }),
-        /*new ol.layer.Image({
-            title: 'Pruebas',
+        new ol.layer.Image({
+            title: 'CGC',
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
-                params: { LAYERS: 'show:0' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/tiger/wms?service=WMS&version=1.1.0&request=GetMap&layers=tiger%3Atiger_roads&bbox=-74.02722%2C40.684221%2C-73.907005%2C40.878178&width=476&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng',
+                params: { LAYERS: 'cgc_puntos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/cgc_puntos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cgc_puntos%3Acgc_puntos&bbox=714989.0794947173%2C2158725.2883159253%2C726772.5071550107%2C2166679.2346946606&width=768&height=518&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
                 serverType: 'geoserver'
             })
-        })*/
+        }),
     ];
 
     return data;
