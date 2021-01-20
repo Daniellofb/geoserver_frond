@@ -214,7 +214,7 @@ function cargaImmx() {
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
-                params: { LAYERS: 'show:0' },
+                params: { LAYERS: 'cgc_puntos' },
                 url: 'http://cartografia.xalapa.gob.mx/geoserver/cgc_puntos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cgc_puntos%3Acgc_puntos&bbox=714989.0794947173%2C2158725.2883159253%2C726772.5071550107%2C2166679.2346946606&width=768&height=518&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
                 serverType: 'geoserver'
             })
