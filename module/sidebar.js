@@ -228,6 +228,16 @@ function cargaImmx() {
                 url: 'http://cartografia.xalapa.gob.mx/geoserver/colonias_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=colonias_poligonos%3Acolonias_poligonos&bbox=713070.5210811349%2C2155983.6202275706%2C727856.8402272151%2C2167101.511132997&width=768&height=577&srs=EPSG%3A32614&styles=&format=image%2Fpng',
                 serverType: 'geoserver'
             })
+        }),
+        new ol.layer.Image({
+            title: 'Pruebas',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'show:0' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/tiger/wms?service=WMS&version=1.1.0&request=GetMap&layers=tiger%3Atiger_roads&bbox=-74.02722%2C40.684221%2C-73.907005%2C40.878178&width=476&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng',
+                serverType: 'geoserver'
+            })
         })
     ];
 
