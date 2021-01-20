@@ -219,7 +219,7 @@ function cargaImmx() {
                 serverType: 'geoserver'
             })
         }),
-        new ol.layer.Image({
+        /*new ol.layer.Image({
             title: 'Colonias',
             visible: false,
             source: new ol.source.ImageWMS({
@@ -238,7 +238,7 @@ function cargaImmx() {
                 url: 'http://cartografia.xalapa.gob.mx/geoserver/tiger/wms?service=WMS&version=1.1.0&request=GetMap&layers=tiger%3Atiger_roads&bbox=-74.02722%2C40.684221%2C-73.907005%2C40.878178&width=476&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng',
                 serverType: 'geoserver'
             })
-        })
+        })*/
     ];
 
     return data;
