@@ -220,6 +220,16 @@ function cargaImmx() {
             })
         }),
         new ol.layer.Image({
+            title: 'Ríos',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'rios_linestring' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/rios_linestring/wms?service=WMS&version=1.1.0&request=GetMap&layers=rios_linestring%3Arios_linestring&bbox=705057.4935708102%2C2144268.84285343%2C737371.7490196251%2C2171416.1673196326&width=768&height=645&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
             title: 'CGC',
             visible: false,
             source: new ol.source.ImageWMS({
