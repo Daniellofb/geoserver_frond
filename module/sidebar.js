@@ -230,6 +230,16 @@ function cargaImmx() {
             })
         }),
         new ol.layer.Image({
+            title: 'Montañas',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'curvas_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/curvas_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=curvas_poligonos%3Acurvas_poligonos&bbox=712968.3064277202%2C2155822.197511026%2C730902.075415652%2C2168561.348520771&width=768&height=545&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
             title: 'CGC',
             visible: false,
             source: new ol.source.ImageWMS({
