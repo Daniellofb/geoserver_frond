@@ -163,7 +163,7 @@
         view: new ol.View({
             center: ol.proj.transform([-96.9137, 19.5426], 'EPSG:4326', 'EPSG:900913'),
             zoom: 12,
-            //minZoom: 12,
+            minZoom: 12,
             //extent: [-10794744.84438, 2212072.63612, -10775612.40370, 2225646.98972],
         })
     });
@@ -220,6 +220,57 @@ function cargaImmx() {
             })
         }),
         new ol.layer.Image({
+            title: 'AGED Rural AM',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'agebruralam_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/agebruralam_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=agebruralam_poligonos%3Aagebruralam_poligonos&bbox=694002.5454092099%2C2139881.3027117215%2C758285.9805978923%2C2182569.3657085067&width=768&height=509&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'AGED Rural',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'agebrural_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/agebrural_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=agebrural_poligonos%3Aagebrural_poligonos&bbox=712906.2484578283%2C2155789.0835765665%2C730905.302660439%2C2168593.3973432607&width=768&height=546&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Codigo Postal',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'cp_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/cp_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cp_poligonos%3Acp_poligonos&bbox=712906.2459696463%2C2155789.0849035024%2C730905.3053828817%2C2168593.394069491&width=768&height=546&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Codigo Postal AM',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'cpam_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/cpam_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cpam_poligonos%3Acpam_poligonos&bbox=694002.5454091992%2C2139881.3027116316%2C758285.980597811%2C2182569.3657084065&width=768&height=509&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Municipio',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'municipio_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/municipio_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=municipio_poligonos%3Amunicipio_poligonos&bbox=712906.2484578167%2C2155789.083576468%2C730905.3026604024%2C2168593.3973431736&width=768&height=546&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                serverType: 'geoserver'
+            })
+        }),
+
+        new ol.layer.Image({
             title: 'Ríos',
             visible: false,
             source: new ol.source.ImageWMS({
@@ -239,6 +290,7 @@ function cargaImmx() {
                 serverType: 'geoserver'
             })
         }),
+
         new ol.layer.Image({
             title: 'CGC',
             visible: false,
