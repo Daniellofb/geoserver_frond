@@ -215,7 +215,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'colonias_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/colonias_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=colonias_poligonos%3Acolonias_poligonos&bbox=713070.5210811349%2C2155983.6202275706%2C727856.8402272151%2C2167101.511132997&width=768&height=577&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
