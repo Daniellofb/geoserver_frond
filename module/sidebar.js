@@ -225,7 +225,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'agebruralam_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/agebruralam_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=agebruralam_poligonos%3Aagebruralam_poligonos&bbox=694002.5454092099%2C2139881.3027117215%2C758285.9805978923%2C2182569.3657085067&width=768&height=509&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -235,7 +235,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'agebrural_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/agebrural_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=agebrural_poligonos%3Aagebrural_poligonos&bbox=712906.2484578283%2C2155789.0835765665%2C730905.302660439%2C2168593.3973432607&width=768&height=546&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -245,7 +245,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'cp_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/cp_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cp_poligonos%3Acp_poligonos&bbox=712906.2459696463%2C2155789.0849035024%2C730905.3053828817%2C2168593.394069491&width=768&height=546&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -255,7 +255,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'cpam_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/cpam_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cpam_poligonos%3Acpam_poligonos&bbox=694002.5454091992%2C2139881.3027116316%2C758285.980597811%2C2182569.3657084065&width=768&height=509&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -265,7 +265,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'municipio_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/municipio_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=municipio_poligonos%3Amunicipio_poligonos&bbox=712906.2484578167%2C2155789.083576468%2C730905.3026604024%2C2168593.3973431736&width=768&height=546&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -276,7 +276,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'rios_linestring' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/rios_linestring/wms?service=WMS&version=1.1.0&request=GetMap&layers=rios_linestring%3Arios_linestring&bbox=705057.4935708102%2C2144268.84285343%2C737371.7490196251%2C2171416.1673196326&width=768&height=645&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -286,7 +286,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'curvas_poligonos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/curvas_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=curvas_poligonos%3Acurvas_poligonos&bbox=712968.3064277202%2C2155822.197511026%2C730902.075415652%2C2168561.348520771&width=768&height=545&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
@@ -297,7 +297,7 @@ function cargaImmx() {
             source: new ol.source.ImageWMS({
                 ratio: 1,
                 params: { LAYERS: 'cgc_puntos' },
-                url: 'http://cartografia.xalapa.gob.mx/geoserver/cgc_puntos/wms?service=WMS&version=1.1.0&request=GetMap&layers=cgc_puntos%3Acgc_puntos&bbox=714989.0794947173%2C2158725.2883159253%2C726772.5071550107%2C2166679.2346946606&width=768&height=518&srs=EPSG%3A32614&styles=&format=image%2Fsvg%20xml',
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
