@@ -106,55 +106,10 @@
                 fold: 'open',
                 layers: [
                     new ol.layer.Group({
-                        title: 'Seguridad Ciudadana',
-                        fold: 'close',
-                        layers: cargaSeguCiu()
-                    }),
-                    new ol.layer.Group({
-                        title: 'Obras Públicas',
-                        fold: 'close',
-                        layers: cargaObraPub()
-                    }),
-                    new ol.layer.Group({
-                        title: 'Participación Ciudadana',
-                        fold: 'close',
-                        layers: cargaPartCiu()
-                    }),
-                    new ol.layer.Group({
-                        title: 'Desarrollo Urbano',
-                        fold: 'close',
-                        layers: cargaDesaUrb()
-                    }),
-                    new ol.layer.Group({
-                        title: 'Desarrollo Social',
-                        fold: 'close',
-                        layers: cargaDesaSoc()
-                    }),
-                    new ol.layer.Group({
-                        title: 'IMMX',
+                        title: 'Capas Base',
                         fold: 'close',
                         layers: cargaImmx()
                     }),
-                    new ol.layer.Group({
-                        title: 'Desarrollo Económico',
-                        fold: 'close',
-                        layers: cargaDesaEco()
-                    }),
-                    new ol.layer.Group({
-                        title: 'Cartografía',
-                        fold: 'close',
-                        layers: cargaCartografia()
-                    }),
-                    new ol.layer.Group({
-                        title: 'CMAS',
-                        fold: 'close',
-                        layers: cargaCmas()
-                    }),
-                    new ol.layer.Group({
-                        title: 'Medio Ambiente y Sustentabilidad',
-                        fold: 'close',
-                        layers: cargaMays()
-                    })
                 ]
             })
         ],
@@ -178,34 +133,6 @@
     map.addControl(sidebar);
 })();
 
-// Carga de capas de Medio Ambiente y Sustentabilidad
-function cargaMays() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de CMAS
-function cargaCmas() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de Cartografia
-function cargaCartografia() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de Desarrollo Economico
-function cargaDesaEco() {
-    var data = [];
-
-    return data;
-}
-
 // Carga de capas de IMMX
 function cargaImmx() {
     var data = [
@@ -220,7 +147,77 @@ function cargaImmx() {
             })
         }),
         new ol.layer.Image({
-            title: 'AGED Rural AM',
+            title: 'Area Geoestadistica Municipal',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'areageoestadisticabasicamunicipal_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Area Geoestadistica',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'areageoestadisticabasicarural_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Localidades Rurales',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'localidadesurbanasrurales_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Localidades Urbanas',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'localidadurbanasrurales_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Zona Metropolitana',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'zonametropoliana_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Cuerpos de Agua',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'cuerposagua_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Áreas Naturales Protegidas',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'anp_poligonos' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'AGED Rural(AM)',
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
@@ -250,7 +247,7 @@ function cargaImmx() {
             })
         }),
         new ol.layer.Image({
-            title: 'Codigo Postal AM',
+            title: 'Codigo Postal(AM)',
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
@@ -264,12 +261,24 @@ function cargaImmx() {
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
-                params: { LAYERS: 'municipio_poligonos' },
+                params: {
+                    LAYERS: 'municipio_poligonos',
+                    TILED: true
+                },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/municipio_poligonos/wms?service=WMS&version=1.1.0&request=GetMap&layers=municipio_poligonos%3Amunicipio_poligonos&bbox=712906.2484578167%2C2155789.083576468%2C730905.3026604024%2C2168593.3973431736&width=768&height=546&srs=EPSG%3A32614&styles=&format=application/openlayers',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Limites Municipales',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'limitemunicipio_line' },
                 url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
                 serverType: 'geoserver'
             })
         }),
-
         new ol.layer.Image({
             title: 'Ríos',
             visible: false,
@@ -290,9 +299,28 @@ function cargaImmx() {
                 serverType: 'geoserver'
             })
         }),
-
         new ol.layer.Image({
-            title: 'CGC',
+            title: 'Localidades Rurales Limites(Puntos)',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'localidadesruralesglobales_points' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Localidades Rurales(Puntos)',
+            visible: false,
+            source: new ol.source.ImageWMS({
+                ratio: 1,
+                params: { LAYERS: 'localidadesrurales_points' },
+                url: 'http://cartografia.xalapa.gob.mx/geoserver/wms',
+                serverType: 'geoserver'
+            })
+        }),
+        new ol.layer.Image({
+            title: 'Centro de Gestión Comunitaria(CGC)',
             visible: false,
             source: new ol.source.ImageWMS({
                 ratio: 1,
@@ -302,41 +330,6 @@ function cargaImmx() {
             })
         }),
     ];
-
-    return data;
-}
-
-// Carga de capas de Desarrollo Social
-function cargaDesaSoc() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de Desarrollo Urbano
-function cargaDesaUrb() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de Participacion Ciudadana
-function cargaPartCiu() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de Obras Publicas
-function cargaObraPub() {
-    var data = [];
-
-    return data;
-}
-
-// Carga de capas de Seguridad Ciudadana
-function cargaSeguCiu() {
-    var data = [];
 
     return data;
 }
