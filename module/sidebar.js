@@ -102,15 +102,9 @@
 
             // Segundo apartado, cargado de capas.
             new ol.layer.Group({
-                title: 'Capas',
+                title: 'Capas Base',
                 fold: 'open',
-                layers: [
-                    new ol.layer.Group({
-                        title: 'Capas Base',
-                        fold: 'close',
-                        layers: cargaImmx()
-                    }),
-                ]
+                layers: cargaImmx()
             })
         ],
 
